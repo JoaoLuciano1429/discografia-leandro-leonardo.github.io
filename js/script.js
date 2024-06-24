@@ -175,6 +175,104 @@ const volume8 = {
   color: "#e0d8dc",
 };
 
+const volume9 = {
+  cover: "img/volume-9.jpg",
+  title: "Leandro & Leonardo Vol. 9",
+  year: 1995,
+  numberOfTracks: 14,
+  tracks: [
+    "Eu Juro (I Swear)",
+    "O Que a Vida Fez Comigo",
+    "Um Violeiro Toca",
+    "Entre Um Gole e Outro",
+    "Diz Pra Mim",
+    "Chuva de Lágrimas",
+    "Festa de Rodeio",
+    "Jogo de Orgulho",
+    "Transa Comigo",
+    "Fui Dando Porrada",
+    "Animal",
+    "Maravilhas do Mundo",
+    "Tarde Demais",
+    "Viúva Nova",
+  ],
+  color: "#98c1d3",
+};
+
+const volume10 = {
+  cover: "img/volume-10.jpg",
+  title: "Leandro & Leonardo Vol. 10",
+  year: 1996,
+  numberOfTracks: 15,
+  tracks: [
+    "Eu Sou Desejo, Você é Paixão (Right Here Waiting)",
+    "Horizonte Azul",
+    "Touro de Rodeio",
+    "Sempre Será",
+    "Saudade Cigana",
+    "Devolva a Passagem",
+    "Pimba",
+    "Amor Antigo",
+    "Loucuras de Amor",
+    "Doce Mistério",
+    "Por Causa Dela",
+    "O Lutador (The Boxer)",
+    "Mordida na Maçã",
+    "É Nisso Que Dá",
+    "Secretária Eletrônica",
+  ],
+  color: "#904f49",
+};
+
+const volume11 = {
+  cover: "img/volume-11.jpg",
+  title: "Leandro & Leonardo Vol. 11",
+  year: 1997,
+  numberOfTracks: 14,
+  tracks: [
+    "Essas Mulheres (Esas Mujeres)",
+    "Cerveja",
+    "Foi Um Tiro em Minha Vida",
+    "Rumo à Goiânia",
+    "Se For Preciso Chorar",
+    "Anarriê",
+    "O Amor Que a Gente Faz",
+    "Pedindo Amor",
+    "Segura Peão",
+    "História de Um Amor (Historia de Un Amor)",
+    "Cama Fria",
+    "Pode Ser Você Meu Grande Amor",
+    "Onde Foi Que Eu Errei",
+    "Salva Minha Vida",
+  ],
+  color: "#d4c79f",
+};
+
+const umSonhador = {
+  cover: "img/um-sonhador.jpg",
+  title: "Um Sonhador",
+  year: 1998,
+  numberOfTracks: 15,
+  tracks: [
+    "Deu Medo",
+    "Solidão Por Perto",
+    "Tô Querendo Você",
+    "Dia de Rodeio",
+    "Copo de Vinho",
+    "Amor Dividido",
+    "Não Entrego",
+    "Cumade e Cumpade",
+    "Tô Dando o Fora",
+    "Machucando o Coração",
+    "Abandonado (Abandonada)",
+    "Vou Onde Você Estiver",
+    "Amor de Novela",
+    "Paixão de Rodeio",
+    "Um Sonhador",
+  ],
+  color: "#d08831",
+};
+
 const body = document.body;
 const main = document.querySelector("main");
 const aside = document.querySelector("aside");
@@ -236,3 +334,19 @@ document
 document
   .getElementById("alb8")
   .addEventListener("click", () => displayAlbum(volume8, "black"));
+
+document
+  .getElementById("alb9")
+  .addEventListener("click", () => displayAlbum(volume9, "black"));
+
+document
+  .getElementById("alb10")
+  .addEventListener("click", () => displayAlbum(volume10, "white"));
+
+document
+  .getElementById("alb11")
+  .addEventListener("click", () => displayAlbum(volume11, "black"));
+
+document
+  .getElementById("alb12")
+  .addEventListener("click", () => displayAlbum(umSonhador, "white"));
