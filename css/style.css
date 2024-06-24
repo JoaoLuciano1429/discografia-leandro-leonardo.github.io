@@ -1,0 +1,114 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body, .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+body {
+    position: relative;
+    z-index: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #2e8b578d;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.container {
+    position: absolute;
+    z-index: 1;
+    width: 100vw;
+    height: 100vh;
+    gap: 10px 0;
+    background: none;
+    backdrop-filter: blur(80px);
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    height: 70%;
+    width: 90%;
+    gap: 10px;
+}
+
+section main {
+    background-color: #2e8b57;
+    width: 70%;
+    height: 90%;
+    overflow: scroll;
+}
+
+section main img {
+    width: 256px;
+    height: auto;
+}
+
+section main > * {
+    margin-left: 25px;
+    margin-top: 15px;
+}
+
+section main hr {
+    margin: 8px;
+}
+
+section main ol#playlist {
+    margin-left: 35px;
+}
+
+section aside {
+    background-color: #2e8b57;
+    width: 30%;
+    height: 90%;
+}
+
+aside ol#albums {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 5px;
+}
+
+aside li {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    cursor: pointer;
+    margin-left: 15px;
+}
+
+aside li img {
+    width: 64px;
+    height: auto;
+}
+
+aside li p {
+    margin-left: 5px;
+}
+
+footer {
+    background-color: #2e8b57;
+    height: 10%;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+}
+
+footer audio {
+    align-self: center;
+}
