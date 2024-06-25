@@ -65,7 +65,7 @@ section main hr {
   margin: 8px;
 }
 
-section main ol#playlist {
+section main ol {
   margin-left: 35px;
 }
 
@@ -76,7 +76,7 @@ section aside {
   overflow: scroll;
 }
 
-aside ol#albums {
+aside ul {
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
