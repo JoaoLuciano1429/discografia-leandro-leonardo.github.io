@@ -3,19 +3,20 @@ const explosaoDeDesejos = {
   title: "Explosão de Desejos",
   year: 1986,
   numberOfTracks: 12,
+  folder: "explosao-de-desejos",
   tracks: [
-    "Contradições",
-    "Filme de Amor",
-    "Explosão de Desejos",
-    "Eu Nem Sei Existir",
-    "Pé de Milho",
-    "Teatro da Vida",
-    "Muros Coloridos",
-    "Fui um Tolo",
-    "Sublime Renúncia",
-    "Relienta",
-    "Moça Bonita do Campo",
-    "Você Nasceu Para Amar",
+    "01-Contradições.mp3",
+    "02-Filme-de-Amor.mp3",
+    "03-Explosão-de-Desejos.mp3",
+    "04-Eu-Nem-Sei-Existir.mp3",
+    "05-Pé-de-Milho.mp3",
+    "06-Teatro-da-Vida.mp3",
+    "07-Muros-Coloridos.mp3",
+    "08-Fui-um-Tolo.mp3",
+    "09-Sublime-Renúncia.mp3",
+    "10-Relienta.mp3",
+    "11-Moça-Bonita-do-Campo.mp3",
+    "12-Você-Nasceu-Para-Amar.mp3",
   ],
   color: "#af9c71",
 };
@@ -25,19 +26,20 @@ const volume2 = {
   title: "Leandro & Leonardo Vol. 2",
   year: 1987,
   numberOfTracks: 12,
+  folder: "volume-2",
   tracks: [
-    "Aconchego",
-    "Bicho do Paraná",
-    "Mesmo Apesar da Chuva",
-    "Fim de Comédia",
-    "Bem-Te-Vi",
-    "Nosso Amor",
-    "Voltei Pra Ficar",
-    "Solidão",
-    "Amor nas Galáxias",
-    "Resto de Vida",
-    "O Amor Já Foi Embora",
-    "Conselho de Pai",
+    "01-Aconchego.mp3",
+    "02-Bicho-Do-Paraná.mp3",
+    "03-Mesmo-Apesar-Da-Chuva.mp3",
+    "04-Fim-De-Comédia.mp3",
+    "05-Bem-Te-Vi.mp3",
+    "06-Nosso-Amor.mp3",
+    "07-Voltei-Pra-Ficar.mp3",
+    "08-Solidão.mp3",
+    "09-Amor-Nas-Galáxias.mp3",
+    "10-Resto-De-Vida.mp3",
+    "11-O-Amor-Já-Foi-Embora.mp3",
+    "12-Conselho-De-Pai.mp3",
   ],
   color: "#474f44",
 };
@@ -47,19 +49,20 @@ const volume3 = {
   title: "Leandro & Leonardo Vol. 3",
   year: 1989,
   numberOfTracks: 12,
+  folder: "volume-3",
   tracks: [
-    "Quem Será Essa Mulher",
-    "Lágrimas do Coração",
-    "Quebra Esse Gelo",
-    "Quarto Negro",
-    "Paraíso",
-    "É Por Você Que Canto (The Sounds of Silence)",
-    "Aqueles Olhos",
-    "Entre Tapas e Beijos",
-    "Teu Olhar",
-    "Cai na Real",
-    "Semi-Luz",
-    "Luar do Sertão",
+    "01-Quem-Será-Essa-Mulher.mp3",
+    "02-Lágrimas-do-Coração.mp3",
+    "03-Quebra-Esse-Gelo.mp3",
+    "04-Quarto-Negro.mp3",
+    "05-Paraíso.mp3",
+    "06-É-Por-Você-Que-Canto-(The-Sounds-of-Silence).mp3",
+    "07-Aqueles-Olhos.mp3",
+    "08-Entre-Tapas-e-Beijos.mp3",
+    "09-Teu-Olhar.mp3",
+    "10-Cai-na-Real.mp3",
+    "11-Semi-Luz.mp3",
+    "12-Luar-do-Sertão.mp3",
   ],
   color: "#e2e2f4",
 };
@@ -69,19 +72,20 @@ const volume4 = {
   title: "Leandro & Leonardo Vol. 4",
   year: 1990,
   numberOfTracks: 12,
+  folder: "volume-4",
   tracks: [
-    "Cadê Você",
-    "Talvez Você Se Lembre",
-    "O Cheiro da Maçã",
-    "Coração Quer Te Encontrar",
-    "Mais Uma Vez Sozinho (Marcas de Amor)",
-    "Pra Nunca Dizer Adeus",
-    "Pense em Mim",
-    "Só Fazendo Amor",
-    "Você Ainda Vai Voltar",
-    "Ponto Fraco",
-    "Desculpe, Mas Eu Vou Chorar",
-    "Talismã",
+    "01-Cadê-Você.mp3",
+    "02-Talvez-Você-Se-Lembre.mp3",
+    "03-O-Cheiro-da-Maçã.mp3",
+    "04-Coração-Quer-Te-Encontrar.mp3",
+    "05-Mais-Uma-Vez-Sozinho-(Marcas-de-Amor).mp3",
+    "06-Pra-Nunca-Dizer-Adeus.mp3",
+    "07-Pense-em-Mim.mp3",
+    "08-Só-Fazendo-Amor.mp3",
+    "09-Você-Ainda-Vai-Voltar.mp3",
+    "10-Ponto-Fraco.mp3",
+    "11-Desculpe,-Mas-Eu-Vou-Chorar.mp3",
+    "12-Talismã.mp3",
   ],
   color: "#526193",
 };
@@ -273,6 +277,21 @@ const umSonhador = {
   color: "#d08831",
 };
 
+const albums = {
+  explosaoDeDesejos: explosaoDeDesejos,
+  volume2: volume2,
+  volume3: volume3,
+  volume4: volume4,
+  volume5: volume5,
+  volume6: volume6,
+  volume7: volume7,
+  volume8: volume8,
+  volume9: volume9,
+  volume10: volume10,
+  volume11: volume11,
+  umSonhador: umSonhador,
+};
+
 const body = document.body;
 const main = document.querySelector("main");
 const aside = document.querySelector("aside");
@@ -282,25 +301,28 @@ const albumTitle = document.getElementById("albumTitle");
 const albumYear = document.getElementById("year");
 const playlist = document.getElementById("playlist");
 
-function displayAlbum(album, colorText) {
-  albumCover.src = album.cover;
-  albumTitle.innerText = album.title;
-  albumYear.innerText = album.year;
+function displayAlbum(albumKey, colorText) {
+  const album = albumKey;
 
-  body.style.backgroundImage = `url("${album.cover}")`;
+  albumCover.src = albumKey.cover;
+  albumTitle.innerText = albumKey.title;
+  albumYear.innerText = albumKey.year;
+
+  body.style.backgroundImage = `url("${albumKey.cover}")`;
   body.style.color = colorText;
-  main.style.backgroundColor = album.color;
+  main.style.backgroundColor = albumKey.color;
   main.style.color = colorText;
-  aside.style.backgroundColor = album.color;
+  aside.style.backgroundColor = albumKey.color;
   aside.style.color = colorText;
-  footer.style.backgroundColor = album.color;
+  footer.style.backgroundColor = albumKey.color;
   playlist.innerHTML = ""; // Limpa a lista de músicas
 
-  for (let i = 0; i < album.numberOfTracks; i++) {
+  album.tracks.forEach((track, index) => {
     const li = document.createElement("li");
-    li.innerText = album.tracks[i];
+    li.innerText = track.replace(/^\d+-/, "").replace(/\.mp3$/, ""); // Remove números e extensão para exibir o título
+    li.addEventListener("click", () => playTrack(albumKey, index)); // Adiciona evento de clique
     playlist.appendChild(li);
-  }
+  });
 }
 
 document
@@ -350,3 +372,14 @@ document
 document
   .getElementById("alb12")
   .addEventListener("click", () => displayAlbum(umSonhador, "white"));
+
+const player = document.getElementById("player");
+
+function playTrack(albumKey, trackIndex) {
+  const album = albumKey;
+  const track = album.tracks[trackIndex];
+  const trackPath = `audio/${album.folder}/${track}`;
+
+  player.src = trackPath;
+  player.play();
+}
