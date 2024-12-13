@@ -19,6 +19,7 @@ const explosaoDeDesejos = {
     "12-Você-Nasceu-Para-Amar.mp3",
   ],
   color: "#af9c71",
+  textColor: "black",
 };
 
 const volume2 = {
@@ -42,6 +43,7 @@ const volume2 = {
     "12-Conselho-De-Pai.mp3",
   ],
   color: "#474f44",
+  textColor: "white",
 };
 
 const volume3 = {
@@ -65,6 +67,7 @@ const volume3 = {
     "12-Luar-do-Sertão.mp3",
   ],
   color: "#e2e2f4",
+  textColor: "black",
 };
 
 const volume4 = {
@@ -88,6 +91,7 @@ const volume4 = {
     "12-Talismã.mp3",
   ],
   color: "#526193",
+  textColor: "white",
 };
 
 const volume5 = {
@@ -111,6 +115,7 @@ const volume5 = {
     "12-Paz-na-Cama.mp3",
   ],
   color: "#5e4d82",
+  textColor: "white",
 };
 
 const volume6 = {
@@ -134,6 +139,7 @@ const volume6 = {
     "12-Chega.mp3",
   ],
   color: "#a68675",
+  textColor: "black",
 };
 
 const volume7 = {
@@ -157,6 +163,7 @@ const volume7 = {
     "12-Diz-Que-Me-Ama.mp3",
   ],
   color: "#ea603d",
+  textColor: "white",
 };
 
 const volume8 = {
@@ -181,6 +188,7 @@ const volume8 = {
     "13-Achei-Uma-Louca.mp3",
   ],
   color: "#e0d8dc",
+  textColor: "black",
 };
 
 const volume9 = {
@@ -206,6 +214,7 @@ const volume9 = {
     "14-Viúva-Nova.mp3",
   ],
   color: "#98c1d3",
+  textColor: "black",
 };
 
 const volume10 = {
@@ -232,6 +241,7 @@ const volume10 = {
     "15-Secretária-Eletrônica.mp3",
   ],
   color: "#904f49",
+  textColor: "white",
 };
 
 const volume11 = {
@@ -257,6 +267,7 @@ const volume11 = {
     "14-Salva-Minha-Vida.mp3",
   ],
   color: "#d4c79f",
+  textColor: "black",
 };
 
 const umSonhador = {
@@ -283,6 +294,7 @@ const umSonhador = {
     "15-Um-Sonhador.mp3",
   ],
   color: "#d08831",
+  textColor: "white",
 };
 
 const body = document.body;
@@ -294,7 +306,7 @@ const albumTitle = document.getElementById("albumTitle");
 const albumYear = document.getElementById("year");
 const playlist = document.getElementById("playlist");
 
-function displayAlbum(albumKey, colorText) {
+function displayAlbum(albumKey) {
   const album = albumKey;
 
   albumCover.src = albumKey.cover;
@@ -302,11 +314,11 @@ function displayAlbum(albumKey, colorText) {
   albumYear.innerText = albumKey.year;
 
   body.style.backgroundImage = `url("${albumKey.cover}")`;
-  body.style.color = colorText;
+  body.style.color = albumKey.textColor;
   main.style.backgroundColor = albumKey.color;
-  main.style.color = colorText;
+  main.style.color = albumKey.textColor;
   aside.style.backgroundColor = albumKey.color;
-  aside.style.color = colorText;
+  aside.style.color = albumKey.textColor;
   footer.style.backgroundColor = albumKey.color;
   playlist.innerHTML = ""; // Limpa a lista de músicas
 
@@ -320,51 +332,51 @@ function displayAlbum(albumKey, colorText) {
 
 document
   .getElementById("alb1")
-  .addEventListener("click", () => displayAlbum(explosaoDeDesejos, "black"));
+  .addEventListener("click", () => displayAlbum(explosaoDeDesejos));
 
 document
   .getElementById("alb2")
-  .addEventListener("click", () => displayAlbum(volume2, "white"));
+  .addEventListener("click", () => displayAlbum(volume2));
 
 document
   .getElementById("alb3")
-  .addEventListener("click", () => displayAlbum(volume3, "black"));
+  .addEventListener("click", () => displayAlbum(volume3));
 
 document
   .getElementById("alb4")
-  .addEventListener("click", () => displayAlbum(volume4, "white"));
+  .addEventListener("click", () => displayAlbum(volume4));
 
 document
   .getElementById("alb5")
-  .addEventListener("click", () => displayAlbum(volume5, "white"));
+  .addEventListener("click", () => displayAlbum(volume5));
 
 document
   .getElementById("alb6")
-  .addEventListener("click", () => displayAlbum(volume6, "black"));
+  .addEventListener("click", () => displayAlbum(volume6));
 
 document
   .getElementById("alb7")
-  .addEventListener("click", () => displayAlbum(volume7, "white"));
+  .addEventListener("click", () => displayAlbum(volume7));
 
 document
   .getElementById("alb8")
-  .addEventListener("click", () => displayAlbum(volume8, "black"));
+  .addEventListener("click", () => displayAlbum(volume8));
 
 document
   .getElementById("alb9")
-  .addEventListener("click", () => displayAlbum(volume9, "black"));
+  .addEventListener("click", () => displayAlbum(volume9));
 
 document
   .getElementById("alb10")
-  .addEventListener("click", () => displayAlbum(volume10, "white"));
+  .addEventListener("click", () => displayAlbum(volume10));
 
 document
   .getElementById("alb11")
-  .addEventListener("click", () => displayAlbum(volume11, "black"));
+  .addEventListener("click", () => displayAlbum(volume11));
 
 document
   .getElementById("alb12")
-  .addEventListener("click", () => displayAlbum(umSonhador, "white"));
+  .addEventListener("click", () => displayAlbum(umSonhador));
 
 const player = document.getElementById("player");
 

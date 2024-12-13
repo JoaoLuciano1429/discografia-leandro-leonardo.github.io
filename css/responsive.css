@@ -1,0 +1,63 @@
+@media (max-width: 570px) {
+  section {
+    flex-direction: column;
+  }
+
+  section main {
+    width: 90%;
+    height: 70%;
+  }
+
+  section main img {
+    width: 8rem;
+  }
+
+  section aside {
+    width: 90%;
+    height: 30%;
+  }
+
+  aside ul {
+    flex-direction: row;
+  }
+
+  aside li p {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 560px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 420px) {
+  h1 {
+    font-size: 1.25rem;
+  }
+
+  section main {
+    height: 80%;
+  }
+
+  section main img {
+    width: 6rem;
+  }
+
+  section main h2 {
+    font-size: 1rem;
+  }
+
+  section main h3 {
+    font-size: 0.75rem;
+  }
+
+  section main ol {
+    font-size: 0.625rem;
+  }
+
+  section aside {
+    height: 20%;
+  }
+}
