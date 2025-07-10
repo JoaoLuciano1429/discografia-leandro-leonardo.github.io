@@ -388,3 +388,7 @@ function playTrack(albumKey, trackIndex) {
   player.src = trackPath;
   player.play();
 }
+
+player.addEventListener("contextmenu", function (e) {
+  e.preventDefault();
+});
