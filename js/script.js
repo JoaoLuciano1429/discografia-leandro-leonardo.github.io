@@ -305,6 +305,18 @@ const albumCover = document.getElementById("albumCover");
 const albumTitle = document.getElementById("albumTitle");
 const albumYear = document.getElementById("year");
 const playlist = document.getElementById("playlist");
+const spanFooter = document.querySelector("footer span");
+const divFooter = document.querySelector("footer div");
+const loopBtn = document.getElementById("loop");
+const randomBtn = document.getElementById("random");
+
+let currentAlbum = null;
+let currentTrackIndex = null;
+let isLoopAll = false;
+let isLoopOne = false;
+let isShuffle = false;
+let shuffledIndexes = [];
+let shufflePointer = 0;
 
 function displayAlbum(albumKey) {
   const album = albumKey;
@@ -321,6 +333,8 @@ function displayAlbum(albumKey) {
   aside.style.color = albumKey.textColor;
   footer.style.backgroundColor = albumKey.color;
   playlist.innerHTML = ""; // Limpa a lista de músicas
+  spanFooter.style.borderColor = albumKey.textColor;
+  divFooter.style.borderColor = albumKey.textColor;
 
   album.tracks.forEach((track, index) => {
     const li = document.createElement("li");
@@ -387,8 +401,158 @@ function playTrack(albumKey, trackIndex) {
 
   player.src = trackPath;
   player.play();
+
+  currentAlbum = albumKey;
+  currentTrackIndex = trackIndex;
+
+  // Atualiza ponteiro do shuffle se necessário
+  if (isShuffle && shuffledIndexes.length > 0) {
+    shufflePointer = shuffledIndexes.indexOf(trackIndex);
+  }
 }
 
 player.addEventListener("contextmenu", function (e) {
   e.preventDefault();
 });
+
+// Função para tocar a próxima música, considerando o modo de repetição e aleatório
+function playNextTrack() {
+  if (!currentAlbum || currentTrackIndex === null) return;
+
+  if (isShuffle) {
+    shufflePointer++;
+    if (shufflePointer >= shuffledIndexes.length) {
+      if (isLoopAll) {
+        shuffleArray(shuffledIndexes);
+        shufflePointer = 0;
+      } else {
+        return; // Fim da lista aleatória
+      }
+    }
+    playTrack(currentAlbum, shuffledIndexes[shufflePointer]);
+  } else {
+    let nextIndex = currentTrackIndex + 1;
+    if (nextIndex >= currentAlbum.tracks.length) {
+      if (isLoopAll) {
+        nextIndex = 0;
+      } else {
+        return; // Fim do álbum
+      }
+    }
+    playTrack(currentAlbum, nextIndex);
+  }
+}
+
+// Função para tocar a música anterior, considerando o modo de repetição e aleatório
+function playPreviousTrack() {
+  if (!currentAlbum || currentTrackIndex === null) return;
+
+  if (isShuffle) {
+    shufflePointer--;
+    if (shufflePointer < 0) {
+      if (isLoopAll) {
+        shufflePointer = shuffledIndexes.length - 1;
+      } else {
+        return;
+      }
+    }
+    playTrack(currentAlbum, shuffledIndexes[shufflePointer]);
+  } else {
+    let prevIndex = currentTrackIndex - 1;
+    if (prevIndex < 0) {
+      if (isLoopAll) {
+        prevIndex = currentAlbum.tracks.length - 1;
+      } else {
+        return;
+      }
+    }
+    playTrack(currentAlbum, prevIndex);
+  }
+}
+
+// Eventos dos botões
+document.getElementById("next").addEventListener("click", playNextTrack);
+document
+  .getElementById("previous")
+  .addEventListener("click", playPreviousTrack);
+
+// Atualiza o emoji do botão de loop
+function updateLoopButton() {
+  if (isLoopOne) {
+    loopBtn.textContent = "🔂"; // Repetir faixa
+    loopBtn.title = "Repetir faixa";
+  } else if (isLoopAll) {
+    loopBtn.textContent = "🔁"; // Repetir álbum
+    loopBtn.title = "Repetir álbum";
+  } else {
+    loopBtn.textContent = "🔶"; // Sem repetição
+    loopBtn.title = "Sem repetição";
+  }
+}
+
+// Atualiza o visual do botão de aleatório
+function updateRandomButton() {
+  if (isShuffle) {
+    randomBtn.style.border = "2px solid #2ecc40"; // Borda verde
+    randomBtn.title = "Ordem aleatória ativada";
+  } else {
+    randomBtn.style.border = "none";
+    randomBtn.title = "Ordem aleatória desativada";
+  }
+}
+
+// Alterna o modo de repetição: nenhum -> álbum -> faixa -> nenhum...
+loopBtn.addEventListener("click", () => {
+  if (!isLoopAll && !isLoopOne) {
+    isLoopAll = true;
+    isLoopOne = false;
+  } else if (isLoopAll && !isLoopOne) {
+    isLoopAll = false;
+    isLoopOne = true;
+  } else {
+    isLoopAll = false;
+    isLoopOne = false;
+  }
+  updateLoopButton();
+});
+
+randomBtn.addEventListener("click", () => {
+  isShuffle = !isShuffle;
+  updateRandomButton();
+  if (isShuffle && currentAlbum) {
+    // Gera uma nova ordem aleatória
+    shuffledIndexes = Array.from(
+      { length: currentAlbum.tracks.length },
+      (_, i) => i
+    );
+    shufflePointer = 0;
+    shuffleArray(shuffledIndexes);
+    // Se já tem uma música tocando, posiciona o ponteiro nela
+    if (currentTrackIndex !== null) {
+      shufflePointer = shuffledIndexes.indexOf(currentTrackIndex);
+    }
+  }
+});
+
+// Função para embaralhar um array (Fisher-Yates)
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+}
+
+// Evento de fim de faixa
+player.addEventListener("ended", () => {
+  if (isLoopOne) {
+    playTrack(currentAlbum, currentTrackIndex); // Repete a faixa
+  } else {
+    playNextTrack();
+  }
+});
+
+// Atualiza botões ao carregar a página
+updateLoopButton();
+updateRandomButton();
+
+// ...existing code...

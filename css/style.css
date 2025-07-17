@@ -109,8 +109,34 @@ footer {
   display: flex;
   justify-content: center;
   align-self: center;
+  flex-direction: row;
+  gap: 15px;
+  padding: 5px;
 }
 
 footer audio {
   align-self: center;
+}
+
+footer > span,
+footer div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 0.625rem;
+  padding: 0.5rem;
+  background: none;
+  border-width: 1px;
+  border-style: solid;
+  border-color: black;
+  border-radius: 10px;
+}
+
+footer > span button,
+div button.command {
+  background-color: #0000009c;
+  border: none;
+  font-size: 1.25rem;
+  cursor: pointer;
 }
